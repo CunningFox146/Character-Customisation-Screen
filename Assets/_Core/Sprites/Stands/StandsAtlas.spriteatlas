@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StandsAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 0ec443a20d1e849418e9184de8719495, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: b0b0775376a6dc94aab94f407b2a2dfc, type: 3}
+  - {fileID: 21300000, guid: 00f6d5f461fd3d940805d7c81c563da2, type: 3}
+  - {fileID: 21300000, guid: 7540c6553d7502140825b71d095c0ef6, type: 3}
+  - {fileID: 21300000, guid: 9ccfa8661f458994b8982f642d8391ad, type: 3}
+  - {fileID: 21300000, guid: eaa98f678c4a256478ea6e19a99b47ab, type: 3}
+  - {fileID: 21300000, guid: 5a599589941f15445bbfbd007fd96a28, type: 3}
+  - {fileID: 21300000, guid: 13fa6f7deb646084f9f72fb31bc7e2a6, type: 3}
+  - {fileID: 21300000, guid: 1260f2ed017b68d4eb820d66ff0754d1, type: 3}
+  - {fileID: 21300000, guid: 90910eeec0922334da83a8ec95e2f2d9, type: 3}
+  - {fileID: 21300000, guid: 5896bebfbf9402b4382ab7d5bcea8a58, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - voxelTile_09
+  - voxelTile_05
+  - voxelTile_01
+  - voxelTile_08
+  - voxelTile_02
+  - voxelTile_07
+  - voxelTile_04
+  - voxelTile_06
+  - voxelTile_10
+  - voxelTile_03
+  m_RenderDataMap: {}
+  m_Tag: StandsAtlas
+  m_IsVariant: 0
