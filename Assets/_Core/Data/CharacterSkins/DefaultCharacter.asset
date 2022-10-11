@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Default
   <SkinId>k__BackingField: 8a5c5fc9-0d39-4a2e-a9b1-53f7f11d1222
-  <Preview>k__BackingField: {fileID: 21300000, guid: 69127ff39d98e544cbfa25fb757a5094, type: 3}
+  <Preview>k__BackingField: {fileID: 21300000, guid: f9707a3665a25b543a10a6bc5bcc64ab, type: 3}
   <PreviewSkeleton>k__BackingField: {fileID: 11400000, guid: a467507a4ffb1d542a558739b2fede77, type: 2}

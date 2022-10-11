@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 8929823378509898944}
   - component: {fileID: 8929823378509898975}
   m_Layer: 5
-  m_Name: SkinPreview
+  m_Name: CharacterPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,8 +293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -1}
-  m_SizeDelta: {x: -32, y: -32}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -50, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8929823378509898944
 CanvasRenderer:
@@ -324,9 +324,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69127ff39d98e544cbfa25fb757a5094, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9707a3665a25b543a10a6bc5bcc64ab, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
