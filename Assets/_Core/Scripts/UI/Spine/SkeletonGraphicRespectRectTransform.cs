@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace DonutLab.Spine
+namespace DonutLab.UI.Spine
 {
     [ExecuteAlways]
     [AddComponentMenu("Spine/RespectRectTranform")]

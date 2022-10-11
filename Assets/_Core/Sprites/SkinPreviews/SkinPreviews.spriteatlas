@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CharacterCustomisation
+  m_Name: SkinPreviews
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -50,41 +50,20 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 0
-      enableTightPacking: 0
+      enableRotation: 1
+      enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: bff49058e2ba4504e81f1091a46b0ba3, type: 3}
-    - {fileID: 2800000, guid: a0bfcbb9c042d1547b04556c0be808a7, type: 3}
-    - {fileID: 2800000, guid: c29899031f4afe9439131b8f3017e67c, type: 3}
-    - {fileID: 2800000, guid: 712b865277395f34694b15db761336be, type: 3}
-    - {fileID: 2800000, guid: de3414bb1ff70764fb14a5175b06be2e, type: 3}
-    - {fileID: 2800000, guid: c71f1453c025a0a45863e14d3ff9e531, type: 3}
-    - {fileID: 2800000, guid: 50ebd3b47f9155648b1d8c25a6c0d4f2, type: 3}
-    - {fileID: 2800000, guid: 926eb92894357fb4cb6940321c63cb7d, type: 3}
+    - {fileID: 102900000, guid: 1957ed8141155684e8abdac03f487eb8, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 712b865277395f34694b15db761336be, type: 3}
-  - {fileID: 21300000, guid: c29899031f4afe9439131b8f3017e67c, type: 3}
-  - {fileID: 21300000, guid: c71f1453c025a0a45863e14d3ff9e531, type: 3}
-  - {fileID: 21300000, guid: 50ebd3b47f9155648b1d8c25a6c0d4f2, type: 3}
-  - {fileID: 21300000, guid: 926eb92894357fb4cb6940321c63cb7d, type: 3}
-  - {fileID: 21300000, guid: bff49058e2ba4504e81f1091a46b0ba3, type: 3}
-  - {fileID: 21300000, guid: a0bfcbb9c042d1547b04556c0be808a7, type: 3}
-  - {fileID: 21300000, guid: de3414bb1ff70764fb14a5175b06be2e, type: 3}
+  - {fileID: 21300000, guid: 69127ff39d98e544cbfa25fb757a5094, type: 3}
   m_PackedSpriteNamesToIndex:
-  - leaderboardsSimple
-  - glassPanel
-  - singleplayer
-  - yellow_button07
-  - Rectangle 1
-  - blue_panel
-  - checkmark
-  - locked
+  - Spineboy
   m_RenderDataMap: {}
-  m_Tag: CharacterCustomisation
+  m_Tag: SkinPreviews
   m_IsVariant: 0
