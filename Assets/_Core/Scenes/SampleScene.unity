@@ -152,7 +152,6 @@ Transform:
   m_Children:
   - {fileID: 2050880287}
   - {fileID: 1357971100}
-  - {fileID: 1921756461}
   - {fileID: 1312958995}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -168,6 +167,7 @@ GameObject:
   - component: {fileID: 90316018}
   - component: {fileID: 90316020}
   - component: {fileID: 90316019}
+  - component: {fileID: 90316021}
   m_Layer: 5
   m_Name: Skins Canvas
   m_TagString: Untagged
@@ -233,6 +233,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &90316021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90316017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341e0401514db9a4ab40c8cbe9ae51e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridList: {fileID: 839304379}
+  _characterSkinData: {fileID: 11400000, guid: c630c7558a7da4f458a4d837526f4093, type: 2}
 --- !u!1 &202086960
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +557,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c71f1453c025a0a45863e14d3ff9e531, type: 3}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1294991124}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowCharacterSkins
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DonutLab.UI.Skins.CustomisationPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
 --- !u!224 &445635672 stripped
@@ -995,8 +1037,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1294991123}
+  - component: {fileID: 1294991124}
   m_Layer: 5
-  m_Name: Right Panel
+  m_Name: Customisation Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1023,6 +1066,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1150, y: 0}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1294991124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294991122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26561b40eafb9245aceb90b9234b89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceCharacter: {fileID: 11400000, guid: c630c7558a7da4f458a4d837526f4093, type: 2}
+  _sourceStand: {fileID: 11400000, guid: 2d054299ecf7afb4189a928caa62d733, type: 2}
+  _skinsGrid: {fileID: 90316021}
 --- !u!1 &1312958992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 81799394}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357971099
 GameObject:
@@ -1120,6 +1178,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1294991123}
+  - {fileID: 1921756461}
   m_Father: {fileID: 81799394}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1185,7 +1244,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1288,6 +1347,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 712b865277395f34694b15db761336be, type: 3}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1294991124}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowStandSkins
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DonutLab.UI.Skins.CustomisationPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163573488503211573, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab3fb21bd9ea74f43b8ff7974dfa1fe4, type: 3}
 --- !u!224 &1794835591 stripped
@@ -1439,7 +1526,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1921756461}
   - component: {fileID: 1921756464}
-  - component: {fileID: 1921756463}
   - component: {fileID: 1921756462}
   m_Layer: 5
   m_Name: Character Canvas
@@ -1455,19 +1541,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921756460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1237757330}
-  m_Father: {fileID: 81799394}
-  m_RootOrder: 2
+  m_Father: {fileID: 1357971100}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960.00006, y: 467.027}
+  m_SizeDelta: {x: 1920, y: 934.0541}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921756462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,29 +1571,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1921756463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921756460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &1921756464
 Canvas:
   m_ObjectHideFlags: 0
