@@ -1,4 +1,4 @@
-﻿using DonutLab.Skins;
+﻿using DonutLab.SkinData;
 using UnityEngine;
 using UnityEngine.UI;
 

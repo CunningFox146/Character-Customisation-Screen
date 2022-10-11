@@ -1,11 +1,17 @@
+using DonutLab.UI.Skins;
 using Spine.Unity;
 using UnityEngine;
 
-namespace DonutLab.Skins
+namespace DonutLab.SkinData
 {
     [CreateAssetMenu(menuName = "Skin Data/Character")]
     public class CharacterSkinData : SkinDataBase
     {
         [field: SerializeField] public SkeletonDataAsset PreviewSkeleton { get; private set; }
+
+        public override void ApplyToPreview(SkinsGrid skinsGrid)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

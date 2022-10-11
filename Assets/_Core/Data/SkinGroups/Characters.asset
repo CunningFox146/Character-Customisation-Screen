@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d66af52822299b42b8a632da2abed8a, type: 3}
-  m_Name: CharacterSkins
+  m_Script: {fileID: 11500000, guid: f4df270f45ca91e4ca903e0f6f5907ab, type: 3}
+  m_Name: Characters
   m_EditorClassIdentifier: 
+  <GroupName>k__BackingField: Character skins
+  <ButtonIcon>k__BackingField: {fileID: 21300000, guid: c71f1453c025a0a45863e14d3ff9e531, type: 3}
   <Skins>k__BackingField:
+  - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}

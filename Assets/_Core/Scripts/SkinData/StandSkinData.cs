@@ -1,10 +1,16 @@
+using DonutLab.UI.Skins;
 using UnityEngine;
 
-namespace DonutLab.Skins
+namespace DonutLab.SkinData
 {
     [CreateAssetMenu(menuName = "Skin Data/Stand")]
     public class StandSkinData : SkinDataBase
     {
         [field: SerializeField] public Sprite GameSprite { get; private set; }
+
+        public override void ApplyToPreview(SkinsGrid skinsGrid)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

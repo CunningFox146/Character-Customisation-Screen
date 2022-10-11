@@ -1,16 +1,46 @@
-﻿using DonutLab.SkinSources;
+﻿using DonutLab.SkinData;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace DonutLab.UI.Skins
 {
     public class CustomisationPanel : MonoBehaviour
     {
-        [SerializeField] private SkinSourceCharacter _sourceCharacter;
-        [SerializeField] private SkinSourceStand _sourceStand;
+        [SerializeField] private List<SkinGroup> _groups;
+        [SerializeField] private CustomisationPanelMenu _menu;
         [SerializeField] private SkinsGrid _skinsGrid;
 
-        public void ShowCharacterSkins() => _skinsGrid.SetSource(_sourceCharacter);
-        public void ShowStandSkins() => _skinsGrid.SetSource(_sourceStand);
+        private SkinGroup _currentGroup;
+        public SkinGroup CurrentGroup
+        {
+            get => _currentGroup;
+            set
+            {
+                if (_currentGroup == value) return;
+                _currentGroup = value;
+                _skinsGrid.SetSource(_currentGroup);
+            }
+        }
+
+        private void Awake()
+        {
+            CurrentGroup = _groups[0];
+            _menu.Init(_groups);
+        }
+
+        private void OnEnable()
+        {
+            _menu.GroupClicked += OnGroupClickedHandler;
+        }
+
+        private void OnDisable()
+        {
+            _menu.GroupClicked -= OnGroupClickedHandler;
+        }
+
+        private void OnGroupClickedHandler(SkinGroup group)
+        {
+            CurrentGroup = group;
+        }
     }
 }
