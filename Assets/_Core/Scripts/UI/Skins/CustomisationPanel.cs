@@ -1,4 +1,5 @@
 ﻿using DonutLab.SkinData;
+using Spine;
 using TMPro;
 using UnityEngine;
 
@@ -20,8 +21,7 @@ namespace DonutLab.UI.Skins
         private void Start()
         {
             UpdateGroup(_skinSystem.CurrentGroup);
-            SetCurrentCharacterSkin(_skinSystem.GetSelectedItem(SkinGroupType.Character) as CharacterSkinData);
-            SetCurrentStandSkin(_skinSystem.GetSelectedItem(SkinGroupType.Stand) as StandSkinData);
+            OnSelectedItemChanged(_skinSystem.CurrentGroup.GroupType, _skinSystem.GetSelectedItem());
             _menu.Init(_skinSystem.Groups);
         }
 
@@ -66,6 +66,7 @@ namespace DonutLab.UI.Skins
         {
             _skinsGrid.SetSource(group);
             _groupName.text = group.GroupName;
+            _preview.SetSkinName(_skinSystem.GetSelectedItem().SkinName);
         }
 
         private void OnSavedItemChanged(SkinGroupType group, SkinDataBase skin)
@@ -75,6 +76,7 @@ namespace DonutLab.UI.Skins
 
         private void OnSelectedItemChanged(SkinGroupType group, SkinDataBase skin)
         {
+            _preview.SetSkinName(skin.SkinName);
             switch (group)
             {
                 case SkinGroupType.Character:

@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using Spine;
 using Spine.Unity;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,10 @@ namespace DonutLab.UI.Skins
 {
     public class CharacterPreview : MonoBehaviour
     {
+        [SerializeField] private TMP_Text _skinNameText;
         [SerializeField] private Image _standPreview;
         [SerializeField] private SkeletonGraphic _characterPreview;
+
         private Skeleton _skeleton;
 
         private Tween _jumpTween;
@@ -24,6 +27,8 @@ namespace DonutLab.UI.Skins
 
             _characterPreview.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
+
+        public void SetSkinName(string skinName) => _skinNameText.text = skinName;
 
         public void SetStandPreview(Sprite standSprite)
         {

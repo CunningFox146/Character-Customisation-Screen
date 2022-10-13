@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Schema;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -63,6 +64,7 @@ namespace DonutLab.SkinData
         public void SetSelectedItem(SkinDataBase item) => SetSelectedItem(CurrentGroup.GroupType, item);
         public void SetSelectedItem(SkinGroupType group, SkinDataBase item)
         {
+            if (_selectedItems.TryGetValue(group, out SkinDataBase value) && value == item) return;
             _selectedItems[group] = item;
             SelectedItemChanged?.Invoke(CurrentGroup.GroupType, item);
         }
@@ -80,6 +82,7 @@ namespace DonutLab.SkinData
         public void SetSavedItem(SkinDataBase item) => SetSelectedItem(CurrentGroup.GroupType, item);
         public void SetSavedItem(SkinGroupType group, SkinDataBase item)
         {
+            if (_savedItems.TryGetValue(group, out SkinDataBase value) && value == item) return;
             _savedItems[group] = item;
             SavedItemChanged?.Invoke(group, item);
         }
