@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace DonutLab.UI.Skins
 {
     [RequireComponent(typeof(Button))]
-    public class SkinSelectItem : MonoBehaviour
+    public class SkinPreviewElement : MonoBehaviour
     {
         [SerializeField] private Image _previewImage;
         [SerializeField] private GameObject _lockedIcon;

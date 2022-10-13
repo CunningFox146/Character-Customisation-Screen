@@ -1,6 +1,7 @@
 ﻿using DonutLab.SkinData;
 using TMPro;
 using UnityEngine;
+using VirtualList;
 
 namespace DonutLab.UI.Skins
 {
@@ -8,7 +9,7 @@ namespace DonutLab.UI.Skins
     {
         [SerializeField] private CustomisationPanelMenu _menu;
         [SerializeField] private TMP_Text _groupName;
-        [SerializeField] private SkinsGrid _skinsGrid;
+        [SerializeField] private AbstractVirtualList _skinsGrid;
         [SerializeField] private CharacterPreview _preview;
 
         private SkinSystem _skinSystem;

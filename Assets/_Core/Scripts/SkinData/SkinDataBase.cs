@@ -20,7 +20,7 @@ namespace DonutLab.SkinData
         }
 #endif
 
-        public virtual void ApplyToItem(SkinSelectItem item)
+        public virtual void ApplyToItem(SkinPreviewElement item)
         {
             item.SetData(this);
         }

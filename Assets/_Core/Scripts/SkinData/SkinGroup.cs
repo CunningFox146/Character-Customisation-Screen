@@ -17,7 +17,7 @@ namespace DonutLab.SkinData
 
         public virtual void SetItem(GameObject view, int index)
         {
-            if (view.TryGetComponent(out SkinSelectItem item))
+            if (view.TryGetComponent(out SkinPreviewElement item))
             {
                 Skins[index].ApplyToItem(item);
             }

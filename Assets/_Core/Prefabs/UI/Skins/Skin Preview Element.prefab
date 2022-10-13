@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 8929823377553698871}
   - component: {fileID: 7713667480945233657}
   m_Layer: 5
-  m_Name: Skin Preview
+  m_Name: Skin Preview Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8929823377553698867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 551b21762605bb14696407ddf5dfb90e, type: 3}
+  m_Script: {fileID: 11500000, guid: a9d78576546cfe14b9ae79b995818768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _previewImage: {fileID: 8929823378509898975}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 8929823378509898944}
   - component: {fileID: 8929823378509898975}
   m_Layer: 5
-  m_Name: Character Preview
+  m_Name: Item Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
