@@ -1,5 +1,4 @@
 ﻿using DonutLab.SkinData;
-using Spine;
 using TMPro;
 using UnityEngine;
 
@@ -19,9 +18,11 @@ namespace DonutLab.UI.Skins
         private void Start()
         {
             UpdateGroup(_skinSystem.CurrentGroup);
-            OnSelectedItemChanged(_skinSystem.CurrentGroup.GroupType, _skinSystem.GetSelectedItem());
+            ApplyCurrentSkins();
+
             _menu.Init(_skinSystem.Groups);
         }
+
 
         private void OnEnable()
         {
@@ -44,9 +45,13 @@ namespace DonutLab.UI.Skins
             _preview.SetStandPreview(standSkinData.GameSprite);
         }
 
-        public void SetSelectedAsSaved()
+        private void ApplyCurrentSkins()
         {
-            _skinSystem.SetSelectedAsSaved();
+            for (int i = _skinSystem.Groups.Count - 1; i >= 0; i--)
+            {
+                var group = _skinSystem.Groups[i];
+                ApplyItem(group.GroupType, _skinSystem.GetSelectedItem(group.GroupType));
+            }
         }
 
         private void OnGroupClickedHandler(SkinGroup group)
@@ -72,8 +77,10 @@ namespace DonutLab.UI.Skins
 
         }
 
-        private void OnSelectedItemChanged(SkinGroupType group, SkinDataBase skin)
+        private void ApplyItem(SkinGroupType group, SkinDataBase skin)
         {
+            if (skin == null) return;
+
             switch (group)
             {
                 case SkinGroupType.Character:
@@ -102,7 +109,7 @@ namespace DonutLab.UI.Skins
 
         private void RegisterEventListeners()
         {
-            _skinSystem.SelectedItemChanged += OnSelectedItemChanged;
+            _skinSystem.SelectedItemChanged += ApplyItem;
             _skinSystem.SavedItemChanged += OnSavedItemChanged;
             _skinSystem.CurrentGroupChanged += OnCurrentGroupChangedHandler;
             _menu.GroupClicked += OnGroupClickedHandler;
@@ -111,7 +118,7 @@ namespace DonutLab.UI.Skins
 
         private void UnregisterEventListeners()
         {
-            _skinSystem.SelectedItemChanged -= OnSelectedItemChanged;
+            _skinSystem.SelectedItemChanged -= ApplyItem;
             _skinSystem.SavedItemChanged -= OnSavedItemChanged;
             _skinSystem.CurrentGroupChanged -= OnCurrentGroupChangedHandler;
             _menu.GroupClicked -= OnGroupClickedHandler;

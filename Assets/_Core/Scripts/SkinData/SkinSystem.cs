@@ -119,9 +119,12 @@ namespace DonutLab.SkinData
 
             foreach (SkinGroup group in Groups)
             {
-                _selectedItems[group.GroupType] = _savedItems.ContainsKey(group.GroupType) ? _savedItems[group.GroupType] : group.Skins[0];
+                if (!_savedItems.TryGetValue(group.GroupType, out SkinDataBase skinData) || skinData == null)
+                {
+                    _savedItems[group.GroupType] = group.Skins[0];
+                }
+                _selectedItems[group.GroupType] = _savedItems[group.GroupType];
             }
-
         }
 
         public SkinDataBase GetSkinById(string id)

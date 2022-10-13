@@ -12,7 +12,6 @@ namespace DonutLab.Save
         public FileSaveProvider(string fileName)
         {
             _filePath = $"{Application.persistentDataPath}/{fileName}";
-            Debug.Log(_filePath);
         }
 
         public GameData Load()
