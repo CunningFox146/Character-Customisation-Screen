@@ -12,10 +12,9 @@ namespace DonutLab.SkinData
         [field: SerializeField, SpineSkin(dataField: nameof(_skeletonData), defaultAsEmptyString: true)]
         public string Skin { get; private set; }
 
-        public override void ApplyToPreview(CharacterPreview preview)
+        public override void ApplyToPreview(CustomisationPanel panel)
         {
-            Debug.Log($"Skin: {Skin}");
-            preview.SetCharacterPreview(Skin);
+            panel.SetCurrentCharacterSkin(this);
         }
     }
 }

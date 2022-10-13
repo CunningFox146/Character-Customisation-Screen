@@ -1,4 +1,5 @@
 ﻿using DonutLab.SkinData;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -53,6 +54,16 @@ namespace DonutLab.UI.Skins
             {
                 Instance = null;
             }
+        }
+
+        public void SetCurrentCharacterSkin(CharacterSkinData characterSkinData)
+        {
+            _preview.SetCharacterPreview(characterSkinData.Skin);
+        }
+
+        public void SetCurrentStandSkin(StandSkinData standSkinData)
+        {
+            _preview.SetStandPreview(standSkinData.GameSprite);
         }
 
         private void OnGroupClickedHandler(SkinGroup group)

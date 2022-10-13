@@ -15,6 +15,6 @@ namespace DonutLab.SkinData
             item.SetData(this);
         }
 
-        public abstract void ApplyToPreview(CharacterPreview preview);
+        public abstract void ApplyToPreview(CustomisationPanel panel);
     }
 }

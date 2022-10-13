@@ -10,7 +10,7 @@ namespace DonutLab.UI.Skins
         [SerializeField] private Image _previewImage;
         [SerializeField] private Image _statusIcon;
         [SerializeField] private GameObject _selectedBorder;
-        [SerializeField] private CharacterPreview _preview;
+        [SerializeField] private CustomisationPanel _panel;
         private Button _button;
         private ISkinData _skinData;
 
@@ -23,7 +23,7 @@ namespace DonutLab.UI.Skins
 
         private void Start()
         {
-            _preview = CustomisationPanel.Instance.CharacterPreview;
+            _panel = CustomisationPanel.Instance;
         }
 
         private void OnEnable()
@@ -45,7 +45,7 @@ namespace DonutLab.UI.Skins
 
         private void OnButtonClickedHandler()
         {
-            _skinData.ApplyToPreview(_preview);
+            _skinData.ApplyToPreview(_panel);
         }
     }
 }
