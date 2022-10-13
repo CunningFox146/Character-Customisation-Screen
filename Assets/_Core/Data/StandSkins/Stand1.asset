@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Snow Ground
   <SkinId>k__BackingField: 1352080732
+  <IsLocked>k__BackingField: 1
   <Preview>k__BackingField: {fileID: 21300000, guid: eaa98f678c4a256478ea6e19a99b47ab, type: 3}
   <GameSprite>k__BackingField: {fileID: 21300000, guid: eaa98f678c4a256478ea6e19a99b47ab, type: 3}

@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34297c99e8dca644ca8c4a26376584d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isSaveToFile: 1
+  _isSaveToFile: 0
   _saveFileName: testSave.json
 --- !u!4 &1105142936
 Transform:

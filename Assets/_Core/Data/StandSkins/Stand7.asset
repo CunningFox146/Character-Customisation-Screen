@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Lava
   <SkinId>k__BackingField: 2621208
+  <IsLocked>k__BackingField: 1
   <Preview>k__BackingField: {fileID: 21300000, guid: 9ccfa8661f458994b8982f642d8391ad, type: 3}
   <GameSprite>k__BackingField: {fileID: 21300000, guid: 9ccfa8661f458994b8982f642d8391ad, type: 3}

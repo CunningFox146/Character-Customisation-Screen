@@ -99,7 +99,7 @@ namespace DonutLab.UI.Skins
         {
             _preview.SetSkinName(skin.SkinName);
             _preview.SetIsSaved(_skinSystem.GetSavedItem() == skin);
-            _preview.SetIsLocked(false);
+            _preview.SetIsLocked(skin.IsLocked);
         }
 
         private void OnSelectButtonClicked()

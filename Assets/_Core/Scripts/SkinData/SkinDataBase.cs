@@ -7,6 +7,7 @@ namespace DonutLab.SkinData
     {
         [field: SerializeField] public string SkinName { get; private set; }
         [field: SerializeField] public string SkinId { get; private set; }
+        [field: SerializeField] public bool IsLocked { get; private set; }
         [field: SerializeField] public Sprite Preview { get; private set; }
 
 #if UNITY_EDITOR

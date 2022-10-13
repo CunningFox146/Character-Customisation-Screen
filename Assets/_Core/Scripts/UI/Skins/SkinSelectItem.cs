@@ -8,11 +8,9 @@ namespace DonutLab.UI.Skins
     public class SkinSelectItem : MonoBehaviour
     {
         [SerializeField] private Image _previewImage;
-        [SerializeField] private Image _statusIcon;
+        [SerializeField] private GameObject _lockedIcon;
+        [SerializeField] private GameObject _savedIcon;
         [SerializeField] private GameObject _selectedBorder;
-        [Space]
-        [SerializeField] private Sprite _savedImage;
-        [SerializeField] private Sprite _lockedImage;
 
         private SkinSystem _skinSystem;
         private Button _button;
@@ -44,6 +42,12 @@ namespace DonutLab.UI.Skins
 
             SetIsSelected(_skinSystem.GetSelectedItem() == skinData);
             SetIsSaved(_skinSystem.GetSavedItem() == skinData);
+            SetIsLocked(skinData.IsLocked);
+        }
+
+        private void SetIsLocked(bool isLocked)
+        {
+            _lockedIcon.gameObject.SetActive(isLocked);
         }
 
         private void SetIsSelected(bool isSelected)
@@ -53,7 +57,7 @@ namespace DonutLab.UI.Skins
 
         private void SetIsSaved(bool isSaved)
         {
-            _statusIcon.sprite = isSaved ? _savedImage : _lockedImage;
+            _savedIcon.SetActive(isSaved);
         }
 
         private void RegisterEventHandlers()

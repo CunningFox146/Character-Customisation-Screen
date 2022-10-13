@@ -54,7 +54,7 @@ namespace DonutLab.UI.Skins
         {
             if (isLocked)
             {
-                _selectButton.gameObject.SetActive(isLocked);
+                _selectButton.gameObject.SetActive(false);
             }
             _lockedHint.SetActive(isLocked);
         }

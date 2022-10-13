@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Emerald
   <SkinId>k__BackingField: -449654578
+  <IsLocked>k__BackingField: 1
   <Preview>k__BackingField: {fileID: 21300000, guid: 00f6d5f461fd3d940805d7c81c563da2, type: 3}
   <GameSprite>k__BackingField: {fileID: 21300000, guid: 00f6d5f461fd3d940805d7c81c563da2, type: 3}
