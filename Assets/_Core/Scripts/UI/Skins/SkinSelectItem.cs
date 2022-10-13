@@ -10,9 +10,9 @@ namespace DonutLab.UI.Skins
         [SerializeField] private Image _previewImage;
         [SerializeField] private Image _statusIcon;
         [SerializeField] private GameObject _selectedBorder;
-        [SerializeField] private CustomisationPanel _panel;
+        [SerializeField] private SkinSystem _skinSystem;
         private Button _button;
-        private ISkinData _skinData;
+        private SkinDataBase _skinData;
 
         public string Id { get; private set; }
 
@@ -23,7 +23,7 @@ namespace DonutLab.UI.Skins
 
         private void Start()
         {
-            _panel = CustomisationPanel.Instance;
+            _skinSystem = SkinSystem.Instance;
         }
 
         private void OnEnable()
@@ -36,7 +36,7 @@ namespace DonutLab.UI.Skins
             _button.onClick.RemoveListener(OnButtonClickedHandler);
         }
 
-        public virtual void SetData(ISkinData skinData)
+        public virtual void SetData(SkinDataBase skinData)
         {
             _skinData = skinData;
             _previewImage.sprite = _skinData.Preview;
@@ -45,7 +45,7 @@ namespace DonutLab.UI.Skins
 
         private void OnButtonClickedHandler()
         {
-            _skinData.ApplyToPreview(_panel);
+            _skinSystem.SetSelectedItem(_skinSystem.CurrentGroup.GroupType, _skinData);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DonutLab.UI.Skins;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using VirtualList;
@@ -9,6 +10,7 @@ namespace DonutLab.SkinData
     public class SkinGroup : ScriptableObject, IListSource
     {
         [field: SerializeField] public string GroupName { get; private set; }
+        [field: SerializeField] public SkinGroupType GroupType { get; private set; }
         [field: SerializeField] public SkinSelectItem SkinItemPrefab { get; private set; }
         [field: SerializeField] public Sprite ButtonIcon { get; private set; }
         [field: SerializeField] public List<SkinDataBase> Skins { get; private set; }
@@ -21,5 +23,12 @@ namespace DonutLab.SkinData
                 Skins[index].ApplyToItem(item);
             }
         }
+    }
+
+    [Serializable]
+    public enum SkinGroupType
+    {
+        Character,
+        Stand
     }
 }
