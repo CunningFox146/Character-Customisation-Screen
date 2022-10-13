@@ -67,21 +67,17 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9ccfa8661f458994b8982f642d8391ad, type: 3}
   - {fileID: 21300000, guid: eaa98f678c4a256478ea6e19a99b47ab, type: 3}
   - {fileID: 21300000, guid: 5a599589941f15445bbfbd007fd96a28, type: 3}
-  - {fileID: 21300000, guid: 13fa6f7deb646084f9f72fb31bc7e2a6, type: 3}
   - {fileID: 21300000, guid: 1260f2ed017b68d4eb820d66ff0754d1, type: 3}
-  - {fileID: 21300000, guid: 90910eeec0922334da83a8ec95e2f2d9, type: 3}
   - {fileID: 21300000, guid: 5896bebfbf9402b4382ab7d5bcea8a58, type: 3}
   m_PackedSpriteNamesToIndex:
-  - voxelTile_09
-  - voxelTile_05
-  - voxelTile_01
-  - voxelTile_08
-  - voxelTile_02
-  - voxelTile_07
-  - voxelTile_04
-  - voxelTile_06
-  - voxelTile_10
-  - voxelTile_03
+  - VoxelTileRock
+  - VoxelTileEmerald
+  - VoxelTileSand
+  - VoxelTileLava
+  - VoxelTileSnow
+  - VoxelTileIce2
+  - VoxelTileIce
+  - VoxelTileGrass
   m_RenderDataMap: {}
   m_Tag: StandsAtlas
   m_IsVariant: 0

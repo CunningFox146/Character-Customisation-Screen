@@ -50,8 +50,8 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
-      enableTightPacking: 1
+      enableRotation: 0
+      enableTightPacking: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
@@ -61,9 +61,11 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: f9707a3665a25b543a10a6bc5bcc64ab, type: 3}
+  - {fileID: 21300000, guid: 08d20a25780604d4ea40b4349ecf30e6, type: 3}
+  - {fileID: 21300000, guid: 410eb41ef258c8d419ba1638c3fbfbb3, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Spineboy
+  - SpineboyDefault
+  - SpineboyGlasses
   m_RenderDataMap: {}
   m_Tag: SkinPreviews
   m_IsVariant: 0

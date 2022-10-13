@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menu: {fileID: 1044151687}
   _groupName: {fileID: 1828993257}
-  _skinsGrid: {fileID: 90316021}
+  _skinsGrid: {fileID: 839304379}
   _preview: {fileID: 1921756462}
 --- !u!1 &1312958992
 GameObject:
