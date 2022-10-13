@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using Spine;
 using Spine.Unity;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,13 @@ namespace DonutLab.UI.Skins
 {
     public class CharacterPreview : MonoBehaviour
     {
+        public event Action SelectButtonClicked;
+
         [SerializeField] private TMP_Text _skinNameText;
         [SerializeField] private Image _standPreview;
         [SerializeField] private SkeletonGraphic _characterPreview;
+        [SerializeField] private Button _selectButton;
+        [SerializeField] private GameObject _lockedHint;
 
         private Skeleton _skeleton;
 
@@ -28,7 +33,31 @@ namespace DonutLab.UI.Skins
             _characterPreview.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
 
+        private void OnEnable()
+        {
+            _selectButton.onClick.AddListener(OnSelectButtonClickedHandler);
+        }
+
+        private void OnDisable()
+        {
+            _selectButton.onClick.RemoveListener(OnSelectButtonClickedHandler);
+        }
+
         public void SetSkinName(string skinName) => _skinNameText.text = skinName;
+
+        public void SetIsSaved(bool isSelected)
+        {
+            _selectButton.gameObject.SetActive(!isSelected);
+        }
+
+        public void SetIsLocked(bool isLocked)
+        {
+            if (isLocked)
+            {
+                _selectButton.gameObject.SetActive(isLocked);
+            }
+            _lockedHint.SetActive(isLocked);
+        }
 
         public void SetStandPreview(Sprite standSprite)
         {
@@ -63,6 +92,12 @@ namespace DonutLab.UI.Skins
             }
             _skeleton.SetSlotsToSetupPose();
             _characterPreview.AnimationState.Apply(_skeleton);
+        }
+
+        private void OnSelectButtonClickedHandler()
+        {
+            SetIsSaved(true);
+            SelectButtonClicked?.Invoke();
         }
     }
 }

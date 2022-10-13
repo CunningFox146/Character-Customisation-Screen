@@ -7,8 +7,6 @@ namespace DonutLab.UI.Skins
 {
     public class CustomisationPanel : MonoBehaviour
     {
-        public static CustomisationPanel Instance { get; private set; }
-
         [SerializeField] private CustomisationPanelMenu _menu;
         [SerializeField] private TMP_Text _groupName;
         [SerializeField] private SkinsGrid _skinsGrid;
@@ -48,7 +46,7 @@ namespace DonutLab.UI.Skins
 
         public void SetSelectedAsSaved()
         {
-            _skinSystem.SetSelectedAsSave();
+            _skinSystem.SetSelectedAsSaved();
         }
 
         private void OnGroupClickedHandler(SkinGroup group)
@@ -66,7 +64,7 @@ namespace DonutLab.UI.Skins
         {
             _skinsGrid.SetSource(group);
             _groupName.text = group.GroupName;
-            _preview.SetSkinName(_skinSystem.GetSelectedItem().SkinName);
+            UpdatePreview(_skinSystem.GetSelectedItem());
         }
 
         private void OnSavedItemChanged(SkinGroupType group, SkinDataBase skin)
@@ -76,7 +74,6 @@ namespace DonutLab.UI.Skins
 
         private void OnSelectedItemChanged(SkinGroupType group, SkinDataBase skin)
         {
-            _preview.SetSkinName(skin.SkinName);
             switch (group)
             {
                 case SkinGroupType.Character:
@@ -88,6 +85,19 @@ namespace DonutLab.UI.Skins
                 default:
                     break;
             }
+            UpdatePreview(skin);
+        }
+
+        private void UpdatePreview(SkinDataBase skin)
+        {
+            _preview.SetSkinName(skin.SkinName);
+            _preview.SetIsSaved(_skinSystem.GetSavedItem() == skin);
+            _preview.SetIsLocked(false);
+        }
+
+        private void OnSelectButtonClicked()
+        {
+            _skinSystem.SetSelectedAsSaved();
         }
 
         private void RegisterEventListeners()
@@ -96,6 +106,7 @@ namespace DonutLab.UI.Skins
             _skinSystem.SavedItemChanged += OnSavedItemChanged;
             _skinSystem.CurrentGroupChanged += OnCurrentGroupChangedHandler;
             _menu.GroupClicked += OnGroupClickedHandler;
+            _preview.SelectButtonClicked += OnSelectButtonClicked;
         }
 
         private void UnregisterEventListeners()
@@ -104,7 +115,7 @@ namespace DonutLab.UI.Skins
             _skinSystem.SavedItemChanged -= OnSavedItemChanged;
             _skinSystem.CurrentGroupChanged -= OnCurrentGroupChangedHandler;
             _menu.GroupClicked -= OnGroupClickedHandler;
+            _preview.SelectButtonClicked -= OnSelectButtonClicked;
         }
-
     }
 }

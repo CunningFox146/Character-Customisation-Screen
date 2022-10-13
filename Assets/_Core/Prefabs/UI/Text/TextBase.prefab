@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8572132728952024071}
   - component: {fileID: 8572132728952024068}
   m_Layer: 5
-  m_Name: HeaderText
+  m_Name: TextBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: header
+  m_text: text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28b5a3bfa9493ad4caa745691d1d1b37, type: 2}
   m_sharedMaterial: {fileID: 170882266367267047, guid: 28b5a3bfa9493ad4caa745691d1d1b37, type: 2}

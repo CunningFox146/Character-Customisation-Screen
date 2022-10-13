@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Schema;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +7,7 @@ namespace DonutLab.SkinData
     public class SkinSystem : MonoBehaviour
     {
         public static SkinSystem Instance { get; private set; }
+
         public event Action CurrentGroupChanged;
         public event Action<SkinGroupType, SkinDataBase> SelectedItemChanged;
         public event Action<SkinGroupType, SkinDataBase> SavedItemChanged;
@@ -87,10 +87,10 @@ namespace DonutLab.SkinData
             SavedItemChanged?.Invoke(group, item);
         }
 
-        public void SetSelectedAsSave() => SetSelectedAsSave(CurrentGroup.GroupType);
-        public void SetSelectedAsSave(SkinGroupType group)
+        public void SetSelectedAsSaved() => SetSelectedAsSaved(CurrentGroup.GroupType);
+        public void SetSelectedAsSaved(SkinGroupType group)
         {
-            _savedItems[group] = _selectedItems[group];
+            SetSavedItem(group, _selectedItems[group]);
         }
     }
 }
