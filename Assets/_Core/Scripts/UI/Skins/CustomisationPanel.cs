@@ -26,20 +26,12 @@ namespace DonutLab.UI.Skins
         private void OnEnable()
         {
             _skinSystem = SkinSystem.Instance;
-
-            _skinSystem.SelectedItemChanged += OnSelectedItemChanged;
-            _skinSystem.SavedItemChanged += OnSavedItemChanged;
-            _skinSystem.CurrentGroupChanged += OnCurrentGroupChangedHandler;
-            _menu.GroupClicked += OnGroupClickedHandler;
+            RegisterEventListeners();
         }
-
 
         private void OnDisable()
         {
-            _skinSystem.SelectedItemChanged -= OnSelectedItemChanged;
-            _skinSystem.SavedItemChanged -= OnSavedItemChanged;
-            _skinSystem.CurrentGroupChanged -= OnCurrentGroupChangedHandler;
-            _menu.GroupClicked -= OnGroupClickedHandler;
+            UnregisterEventListeners();
         }
 
         public void SetCurrentCharacterSkin(CharacterSkinData characterSkinData)
@@ -93,5 +85,22 @@ namespace DonutLab.UI.Skins
                     break;
             }
         }
+
+        private void RegisterEventListeners()
+        {
+            _skinSystem.SelectedItemChanged += OnSelectedItemChanged;
+            _skinSystem.SavedItemChanged += OnSavedItemChanged;
+            _skinSystem.CurrentGroupChanged += OnCurrentGroupChangedHandler;
+            _menu.GroupClicked += OnGroupClickedHandler;
+        }
+
+        private void UnregisterEventListeners()
+        {
+            _skinSystem.SelectedItemChanged -= OnSelectedItemChanged;
+            _skinSystem.SavedItemChanged -= OnSavedItemChanged;
+            _skinSystem.CurrentGroupChanged -= OnCurrentGroupChangedHandler;
+            _menu.GroupClicked -= OnGroupClickedHandler;
+        }
+
     }
 }

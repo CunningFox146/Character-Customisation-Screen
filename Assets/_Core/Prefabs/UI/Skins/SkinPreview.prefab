@@ -184,6 +184,9 @@ MonoBehaviour:
   _previewImage: {fileID: 8929823378509898975}
   _statusIcon: {fileID: 8929823377314867720}
   _selectedBorder: {fileID: 8929823378268010321}
+  _skinSystem: {fileID: 0}
+  _savedImage: {fileID: 21300000, guid: a0bfcbb9c042d1547b04556c0be808a7, type: 3}
+  _lockedImage: {fileID: 21300000, guid: de3414bb1ff70764fb14a5175b06be2e, type: 3}
 --- !u!1 &8929823378268010321
 GameObject:
   m_ObjectHideFlags: 0

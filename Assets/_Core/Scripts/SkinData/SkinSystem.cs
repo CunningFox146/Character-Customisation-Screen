@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 namespace DonutLab.SkinData
 {
@@ -45,7 +44,15 @@ namespace DonutLab.SkinData
             }
         }
 
-        public SkinDataBase GetSelectedItem(SkinGroupType group) => _selectedItems[group];
+        public SkinDataBase GetSelectedItem() => GetSelectedItem(CurrentGroup.GroupType);
+        public SkinDataBase GetSelectedItem(SkinGroupType group)
+        {
+            if (_selectedItems.TryGetValue(group, out SkinDataBase value))
+            {
+                return value;
+            }
+            return null;
+        }
 
         public void SetSelectedItem(SkinDataBase item) => SetSelectedItem(CurrentGroup.GroupType, item);
         public void SetSelectedItem(SkinGroupType group, SkinDataBase item)
@@ -54,7 +61,15 @@ namespace DonutLab.SkinData
             SelectedItemChanged?.Invoke(CurrentGroup.GroupType, item);
         }
 
-        public SkinDataBase GetSavedItem(SkinGroupType group) => _savedItems[group];
+        public SkinDataBase GetSavedItem() => GetSavedItem(CurrentGroup.GroupType);
+        public SkinDataBase GetSavedItem(SkinGroupType group)
+        {
+            if (_savedItems.TryGetValue(group, out SkinDataBase value))
+            {
+                return value;
+            }
+            return null;
+        }
 
         public void SetSavedItem(SkinDataBase item) => SetSelectedItem(CurrentGroup.GroupType, item);
         public void SetSavedItem(SkinGroupType group, SkinDataBase item)
