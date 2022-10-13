@@ -9,7 +9,7 @@ namespace DonutLab.SkinData
     {
         [field: SerializeField] public SkeletonDataAsset PreviewSkeleton { get; private set; }
 
-        public override void ApplyToPreview(SkinsGrid skinsGrid)
+        public override void ApplyToPreview(CharacterPreview preview)
         {
             throw new System.NotImplementedException();
         }

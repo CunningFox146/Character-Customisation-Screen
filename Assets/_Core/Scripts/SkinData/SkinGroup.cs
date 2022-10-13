@@ -9,6 +9,7 @@ namespace DonutLab.SkinData
     public class SkinGroup : ScriptableObject, IListSource
     {
         [field: SerializeField] public string GroupName { get; private set; }
+        [field: SerializeField] public SkinSelectItem SkinItemPrefab { get; private set; }
         [field: SerializeField] public Sprite ButtonIcon { get; private set; }
         [field: SerializeField] public List<SkinDataBase> Skins { get; private set; }
         public int Count => Skins.Count;

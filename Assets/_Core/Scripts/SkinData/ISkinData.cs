@@ -8,6 +8,6 @@ namespace DonutLab.SkinData
         public Sprite Preview { get; }
         public string SkinId { get; }
         public void ApplyToItem(SkinSelectItem item);
-        public void ApplyToPreview(SkinsGrid skinsGrid);
+        public void ApplyToPreview(CharacterPreview preview);
     }
 }

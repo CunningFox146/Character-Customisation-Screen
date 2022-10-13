@@ -8,9 +8,9 @@ namespace DonutLab.SkinData
     {
         [field: SerializeField] public Sprite GameSprite { get; private set; }
 
-        public override void ApplyToPreview(SkinsGrid skinsGrid)
+        public override void ApplyToPreview(CharacterPreview preview)
         {
-            throw new System.NotImplementedException();
+            preview.SetStandPreview(GameSprite);
         }
     }
 }
