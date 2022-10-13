@@ -20,6 +20,8 @@ namespace DonutLab.UI.Skins
         private void Start()
         {
             UpdateGroup(_skinSystem.CurrentGroup);
+            SetCurrentCharacterSkin(_skinSystem.GetSelectedItem(SkinGroupType.Character) as CharacterSkinData);
+            SetCurrentStandSkin(_skinSystem.GetSelectedItem(SkinGroupType.Stand) as StandSkinData);
             _menu.Init(_skinSystem.Groups);
         }
 

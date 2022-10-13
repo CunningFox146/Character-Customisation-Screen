@@ -34,6 +34,12 @@ namespace DonutLab.SkinData
             _selectedItems = new Dictionary<SkinGroupType, SkinDataBase>();
             _savedItems = new Dictionary<SkinGroupType, SkinDataBase>();
             _currentGroup = Groups[0];
+
+            foreach (SkinGroup group in Groups)
+            {
+                if (_selectedItems.ContainsKey(group.GroupType)) continue;
+                _selectedItems[group.GroupType] = group.Skins[0];
+            }
         }
 
         private void OnDestroy()

@@ -11,7 +11,6 @@ namespace DonutLab.SkinData
     {
         [field: SerializeField] public string GroupName { get; private set; }
         [field: SerializeField] public SkinGroupType GroupType { get; private set; }
-        [field: SerializeField] public SkinSelectItem SkinItemPrefab { get; private set; }
         [field: SerializeField] public Sprite ButtonIcon { get; private set; }
         [field: SerializeField] public List<SkinDataBase> Skins { get; private set; }
         public int Count => Skins.Count;
