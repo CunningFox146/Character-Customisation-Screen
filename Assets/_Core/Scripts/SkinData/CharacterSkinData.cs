@@ -7,11 +7,15 @@ namespace DonutLab.SkinData
     [CreateAssetMenu(menuName = "Skin Data/Character")]
     public class CharacterSkinData : SkinDataBase
     {
-        [field: SerializeField] public SkeletonDataAsset PreviewSkeleton { get; private set; }
+        [SerializeField] private SkeletonDataAsset _skeletonData;
+
+        [field: SerializeField, SpineSkin(dataField: nameof(_skeletonData), defaultAsEmptyString: true)]
+        public string Skin { get; private set; }
 
         public override void ApplyToPreview(CharacterPreview preview)
         {
-            throw new System.NotImplementedException();
+            Debug.Log($"Skin: {Skin}");
+            preview.SetCharacterPreview(Skin);
         }
     }
 }

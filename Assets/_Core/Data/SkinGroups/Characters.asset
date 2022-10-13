@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Characters
   m_EditorClassIdentifier: 
   <GroupName>k__BackingField: Character skins
+  <SkinItemPrefab>k__BackingField: {fileID: 0}
   <ButtonIcon>k__BackingField: {fileID: 21300000, guid: c71f1453c025a0a45863e14d3ff9e531, type: 3}
   <Skins>k__BackingField:
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
+  - {fileID: 11400000, guid: ab538440a5839284ca9cc2157a663397, type: 2}
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
+  - {fileID: 11400000, guid: ab538440a5839284ca9cc2157a663397, type: 2}
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
+  - {fileID: 11400000, guid: ab538440a5839284ca9cc2157a663397, type: 2}
   - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
-  - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
-  - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
-  - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
-  - {fileID: 11400000, guid: c06a58f60ecfe1a46a9e78924c693990, type: 2}
+  - {fileID: 11400000, guid: ab538440a5839284ca9cc2157a663397, type: 2}
