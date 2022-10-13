@@ -1,5 +1,4 @@
 using DonutLab.UI.Skins;
-using System;
 using UnityEngine;
 
 namespace DonutLab.SkinData
@@ -7,8 +6,18 @@ namespace DonutLab.SkinData
     public abstract class SkinDataBase : ScriptableObject, ISkinData
     {
         [field: SerializeField] public string SkinName { get; private set; }
-        [field: SerializeField] public string SkinId { get; private set; } = Guid.NewGuid().ToString();
+        [field: SerializeField] public string SkinId { get; private set; }
         [field: SerializeField] public Sprite Preview { get; private set; }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            if (string.IsNullOrEmpty(SkinId))
+            {
+                SkinId = SkinName.GetHashCode().ToString();
+            }
+        }
+#endif
 
         public virtual void ApplyToItem(SkinSelectItem item)
         {

@@ -920,6 +920,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8572132728952024069, guid: fb7bb7ccebbce4944a97e22b03e53653, type: 3}
   m_PrefabInstance: {fileID: 1088513139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1105142934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105142936}
+  - component: {fileID: 1105142935}
+  m_Layer: 0
+  m_Name: SaveSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1105142935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105142934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34297c99e8dca644ca8c4a26376584d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSaveToFile: 1
+  _saveFileName: testSave.json
+--- !u!4 &1105142936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105142934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1149887418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e4e1b4959597a4d90c3b1b90377e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _saveSystem: {fileID: 1105142935}
   <Groups>k__BackingField:
   - {fileID: 11400000, guid: dd5136050d5f69e4dbfa40f5868f6dfb, type: 2}
   - {fileID: 11400000, guid: f7cc7479872240440b47ff8c78df4abe, type: 2}

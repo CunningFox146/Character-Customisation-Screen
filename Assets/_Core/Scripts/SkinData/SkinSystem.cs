@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonutLab.Save;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace DonutLab.SkinData
         public event Action<SkinGroupType, SkinDataBase> SelectedItemChanged;
         public event Action<SkinGroupType, SkinDataBase> SavedItemChanged;
 
+        [SerializeField] private SaveSystem _saveSystem;
         private SkinGroup _currentGroup;
         private Dictionary<SkinGroupType, SkinDataBase> _selectedItems;
         private Dictionary<SkinGroupType, SkinDataBase> _savedItems;
@@ -32,15 +34,8 @@ namespace DonutLab.SkinData
         private void Awake()
         {
             Instance = this;
-            _selectedItems = new Dictionary<SkinGroupType, SkinDataBase>();
-            _savedItems = new Dictionary<SkinGroupType, SkinDataBase>();
             _currentGroup = Groups[0];
-
-            foreach (SkinGroup group in Groups)
-            {
-                if (_selectedItems.ContainsKey(group.GroupType)) continue;
-                _selectedItems[group.GroupType] = group.Skins[0];
-            }
+            Load();
         }
 
         private void OnDestroy()
@@ -85,12 +80,60 @@ namespace DonutLab.SkinData
             if (_savedItems.TryGetValue(group, out SkinDataBase value) && value == item) return;
             _savedItems[group] = item;
             SavedItemChanged?.Invoke(group, item);
+            Save();
         }
 
         public void SetSelectedAsSaved() => SetSelectedAsSaved(CurrentGroup.GroupType);
         public void SetSelectedAsSaved(SkinGroupType group)
         {
             SetSavedItem(group, _selectedItems[group]);
+        }
+
+        private void Save()
+        {
+            var gameData = _saveSystem.GameData;
+            foreach (var data in _savedItems)
+            {
+                switch (data.Key)
+                {
+                    case SkinGroupType.Character:
+                        gameData.CharacterSkin = data.Value?.SkinId;
+                        break;
+                    case SkinGroupType.Stand:
+                        gameData.StandSkin = data.Value?.SkinId;
+                        break;
+                    default: break;
+                }
+            }
+            _saveSystem.Save();
+        }
+
+        private void Load()
+        {
+            _savedItems = new Dictionary<SkinGroupType, SkinDataBase>();
+            _selectedItems = new Dictionary<SkinGroupType, SkinDataBase>();
+
+            var data = _saveSystem.GameData;
+            _savedItems[SkinGroupType.Character] = GetSkinById(data.CharacterSkin);
+            _savedItems[SkinGroupType.Stand] = GetSkinById(data.StandSkin);
+
+            foreach (SkinGroup group in Groups)
+            {
+                _selectedItems[group.GroupType] = _savedItems.ContainsKey(group.GroupType) ? _savedItems[group.GroupType] : group.Skins[0];
+            }
+
+        }
+
+        public SkinDataBase GetSkinById(string id)
+        {
+            foreach (SkinGroup group in Groups)
+            {
+                foreach (SkinDataBase skinData in group.Skins)
+                {
+                    if (skinData.SkinId == id) return skinData;
+                }
+            }
+            return null;
         }
     }
 }

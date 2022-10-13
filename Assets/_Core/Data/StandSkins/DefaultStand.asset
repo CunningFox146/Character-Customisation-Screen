@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DefaultStand
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Crusty Ground
-  <SkinId>k__BackingField: 732b7cef-33ab-42a2-86d3-c1ea80bad909
+  <SkinId>k__BackingField: -214420629
   <Preview>k__BackingField: {fileID: 21300000, guid: 7540c6553d7502140825b71d095c0ef6, type: 3}
   <GameSprite>k__BackingField: {fileID: 21300000, guid: 7540c6553d7502140825b71d095c0ef6, type: 3}
